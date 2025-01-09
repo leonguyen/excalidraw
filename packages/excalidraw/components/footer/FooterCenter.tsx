@@ -17,6 +17,7 @@ const FooterCenter = ({ children }: { children?: React.ReactNode }) => {
         {children}
       </div>
     </FooterCenterTunnel.In>
+    <Link to="https://vksm.odoo.com" target="_blank">Vựa kiểng Sáu Mai</Link>
   );
 };
 
