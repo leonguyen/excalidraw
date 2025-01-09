@@ -16,8 +16,9 @@ const FooterCenter = ({ children }: { children?: React.ReactNode }) => {
       >
         {children}
       </div>
+      <Link to="https://vksm.odoo.com" target="_blank">Vựa kiểng Sáu Mai</Link>
     </FooterCenterTunnel.In>
-    <Link to="https://vksm.odoo.com" target="_blank">Vựa kiểng Sáu Mai</Link>
+
   );
 };
 
