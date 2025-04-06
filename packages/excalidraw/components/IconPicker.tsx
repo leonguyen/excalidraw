@@ -1,14 +1,18 @@
-import React, { useEffect } from "react";
 import * as Popover from "@radix-ui/react-popover";
+import clsx from "clsx";
+import React, { useEffect } from "react";
+
+import { isArrowKey, KEYS } from "@excalidraw/common";
+
+import { atom, useAtom } from "../editor-jotai";
+import { getLanguage, t } from "../i18n";
+
+import Collapsible from "./Stats/Collapsible";
+import { useDevice } from "./App";
 
 import "./IconPicker.scss";
-import { isArrowKey, KEYS } from "../keys";
-import { getLanguage, t } from "../i18n";
-import clsx from "clsx";
-import Collapsible from "./Stats/Collapsible";
-import { atom, useAtom } from "jotai";
-import { jotaiScope } from "../jotai";
-import { useDevice } from "..";
+
+import type { JSX } from "react";
 
 const moreOptionsAtom = atom(false);
 
@@ -94,10 +98,7 @@ function Picker<T>({
     event.stopPropagation();
   };
 
-  const [showMoreOptions, setShowMoreOptions] = useAtom(
-    moreOptionsAtom,
-    jotaiScope,
-  );
+  const [showMoreOptions, setShowMoreOptions] = useAtom(moreOptionsAtom);
 
   const alwaysVisibleOptions = React.useMemo(
     () => options.slice(0, numberOfOptionsToAlwaysShow),
